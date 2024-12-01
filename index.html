@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Particle Animation</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script> <!-- GSAP CDN -->
+</head>
+<body>
+  <audio id="myAudio" autoplay loop muted>
+    <source src="./audio/audio.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <button id="playButton">Play Audio</button>
+
+  <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js",
+          "three/examples/jsm/controls/OrbitControls.js": "https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/OrbitControls.js",
+          "three/examples/jsm/loaders/GLTFLoader.js": "https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/loaders/GLTFLoader.js"
+        }
+      }
+  </script>
+
+  <script>
+    window.onload = function() {
+      // Wait for the user to click the play button to start the audio
+      document.getElementById("playButton").addEventListener("click", function() {
+        var audio = document.getElementById("myAudio");
+        audio.muted = false; // Unmute the audio
+        audio.play(); // Play the audio
+      });
+    };
+  </script>
+  
+  <script type="module" src="main.js"></script>
+</body>
+</html>
